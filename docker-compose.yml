@@ -1,0 +1,53 @@
+version: '2'
+
+services:
+
+  api:
+      build: ./backend/api-gateway-service
+      ports:
+          - '8080:8080'
+      volumes:
+          - ./backend/api-gateway-service/src:/usr/src/app
+      links:
+          # - faye
+          - users
+      networks:
+          - default
+
+  users:
+      build: ./backend/user-service
+      volumes:
+          - ./backend/user-service/src:/usr/src/app
+      links:
+          # - faye
+          - mongo
+      networks:
+          - default
+
+  # faye:
+  #     build: ./backend/faye-service
+  #     volumes:
+  #         - ./backend/faye-service/src:/usr/src/app
+  #     links:
+  #         - redis
+  #     networks:
+  #         - default
+
+  mongo:
+      image: mongo:latest
+      volumes:
+        - ./data/mongo:/var/lib/mongo
+      networks:
+          - default
+
+  # redis:
+  #     image: redis:latest
+  #     volumes:
+  #       - ./data/redis:/var/lib/redis
+  #     networks:
+  #         - default
+
+networks:
+
+  default:
+    driver: bridge

@@ -1,0 +1,19 @@
+{
+  "name": "microservice-api-gateway",
+  "version": "1.0.0",
+  "description": "Microservice Application API Gateway",
+  "author": "Mike Roth <hi@michaelharrisonroth.com>",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.3",
+    "faye": "^1.2.3",
+    "http": "0.0.0",
+    "jsonwebtoken": "^7.4.1",
+    "request": "^2.81.0"
+  }
+}

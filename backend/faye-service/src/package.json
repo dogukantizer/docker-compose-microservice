@@ -1,0 +1,15 @@
+{
+  "name": "microservice-faye-server",
+  "version": "1.0.0",
+  "description": "Microservice Application Faye IPC",
+  "author": "Mike Roth <hi@michaelharrisonroth.com>",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "faye": "^1.2.3",
+    "faye-redis": "^0.2.0",
+    "http": "0.0.0"
+  }
+}
